@@ -1,0 +1,21 @@
+/* ═══════════════════════════════════════════════════
+   MODULE: base
+   ═══════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0 }
+
+body {
+  background:var(--bg); color:var(--ink);
+  font-family:'Noto Naskh Arabic', serif;
+  min-height:100vh; overflow-x:hidden; transition:var(--transition);
+}
+body::before {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.15;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.04'/%3E%3C/svg%3E");
+}
+/* Canvas باید روی body و noise باشه ولی زیر content */
+#bgCanvas {
+  position:fixed; inset:0; z-index:2; pointer-events:none;
+  opacity:.92; filter:saturate(1.16);
+}
+/* داخل صفحات داخلی، بوم بالای پس‌زمینهٔ مات و زیر همهٔ محتوای صفحه قرار می‌گیرد. */
+.inner-page > #bgCanvas { z-index:0; opacity:.82 }
