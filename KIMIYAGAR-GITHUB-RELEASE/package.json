@@ -1,0 +1,18 @@
+{
+  "name": "kimiyagar-v1",
+  "version": "1.0.0",
+  "private": true,
+  "description": "KIMIYAGAR v1 modular Persian RTL calculation application",
+  "scripts": {
+    "test": "node tests/run-all.mjs",
+    "test:mostahsela": "node tests/mostahsela.test.mjs",
+    "test:golden": "node tests/mostahsela-golden.test.mjs",
+    "test:mostahsela-v2": "node tests/mostahsela-v2.test.mjs",
+    "test:auto-spacing": "node tests/mostahsela-v2-auto-spacing.test.mjs",
+    "test:volume2": "node tests/volume2-integration.test.mjs",
+    "test:calculation-tools": "node tests/calculation-tools.test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

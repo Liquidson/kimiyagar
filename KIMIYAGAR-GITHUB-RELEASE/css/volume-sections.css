@@ -1,0 +1,72 @@
+
+/* صفحات مشترک جلد اول / جلد دوم */
+.volume-page-shell { width: 100%; }
+.volume-page-intro { margin-bottom: 12px; text-align: center; }
+.volume-page-intro .small { color: var(--ink-dim); margin-top: 6px; }
+.volume-switcher {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel);
+}
+.volume-switch-btn {
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--ink-dim);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+.volume-switch-btn:hover { color: var(--ink); border-color: var(--border); }
+.volume-switch-btn.active {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+  background: rgba(201,168,76,.08);
+}
+.volume-switch-btn:focus-visible,
+.volume-depth-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.volume-panel { min-height: 120px; }
+.volume-source-note { border-color: rgba(201,168,76,.25); }
+.volume-anchor-status {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid rgba(90,150,105,.35);
+  color: #72b987;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.volume-anchor-status.failed { border-color: rgba(185,80,80,.45); color: #d07a7a; }
+.volume-depth-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+.volume-depth-btn {
+  min-height: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--panel);
+  color: var(--ink-dim);
+  font: inherit;
+  cursor: pointer;
+}
+.volume-depth-btn strong { font-size: 22px; color: var(--ink); }
+.volume-depth-btn span { font-size: 11px; }
+.volume-depth-btn.active { border-color: var(--gold-dim); color: var(--gold); background: rgba(201,168,76,.07); }
+.volume-depth-btn.active strong { color: var(--gold); }
+@media (max-width: 520px) {
+  .volume-depth-grid { grid-template-columns: 1fr; }
+  .volume-depth-btn { min-height: 58px; flex-direction: row; }
+}
+
